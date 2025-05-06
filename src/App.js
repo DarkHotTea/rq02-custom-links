@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from "react";
 import Link from "./Link";
+import ButtonList from "./ButtonList";
 
 /* class Link extends Component {
   render() {
@@ -17,7 +18,13 @@ import Link from "./Link";
 
 class App extends Component {
   render() {
-    const link1 = React.createElement(Link, {
+    const world = <em>World</em>;
+    const dateTimeNow = new Date().toLocaleString();
+
+    return (
+      /* const title = <h1>Hello <em>World</em>!</h1>; */
+
+      /* const link1 = React.createElement(Link, {
       url: "//react.dev",
       framework: "React",
     });
@@ -30,9 +37,23 @@ class App extends Component {
     const link3 = React.createElement(Link, {
       url: "//angular.io",
       framework: "Angular",
-    });
+    }); */
 
-    return React.createElement(Fragment, null, link1, link2, link3);
+      /* const link1 = <Link url="//react.dev" framework="React"/>;
+      const link2 = <Link url="//vuejs.org" framework="Vue"/>;
+      const link3 = <Link url="//angular.io" framework="Angular"/>; */
+
+      <Fragment>
+        <h1>Hello {world}!</h1>
+        <span>Current date and time is {dateTimeNow}.</span>
+        <Link url="//react.dev">
+          <strong>React</strong>
+        </Link>
+        <Link url="//vuejs.org" children={"Vue"}/>
+        <Link url="//angular.io">Angular</Link>
+        <ButtonList />
+      </Fragment>
+    );
   }
 }
 
